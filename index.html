@@ -26,6 +26,29 @@
 .theme-light{color-scheme:light;--color-surface-page:var(--_g50);--color-surface-base:var(--_g0);--color-surface-elevated:var(--_g0);--color-surface-sunken:var(--_g100);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g950);--color-text-secondary:var(--_g600);--color-text-tertiary:var(--_g400);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y600);--color-border-subtle:var(--_g100);--color-border-default:var(--_g200);--color-border-strong:var(--_g400);--color-success-bg:#EDF7F5;--color-success-fg:var(--_teal-dark);--color-success-bd:var(--_teal);--color-warning-bg:var(--_y50);--color-warning-fg:var(--_y900);--color-warning-bd:var(--_y600);--color-danger-bg:#FEF2F2;--color-danger-fg:#C0392B;--color-danger-bd:var(--_coral);--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 12px rgba(0,0,0,0.08);}
 .theme-dark{color-scheme:dark;--color-surface-page:var(--_g950);--color-surface-base:var(--_g900);--color-surface-elevated:var(--_g800);--color-surface-sunken:var(--_g950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g100);--color-text-secondary:var(--_g400);--color-text-tertiary:var(--_g600);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(255,255,255,0.06);--color-border-default:rgba(255,255,255,0.10);--color-border-strong:rgba(255,255,255,0.20);--color-success-bg:rgba(45,140,122,0.12);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.30);--color-warning-bg:rgba(245,196,0,0.10);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.25);--color-danger-bg:rgba(232,96,96,0.12);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.30);--shadow-sm:0 1px 3px rgba(0,0,0,0.40);--shadow-md:0 4px 12px rgba(0,0,0,0.40);}
 .theme-brand{color-scheme:light;--color-surface-page:var(--_y400);--color-surface-base:var(--_y200);--color-surface-elevated:var(--_y50);--color-surface-sunken:var(--_y600);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_g950);--color-text-primary:var(--_g950);--color-text-secondary:var(--_y900);--color-text-tertiary:var(--_y800);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_g950);--color-brand-hover:var(--_n700);--color-border-subtle:rgba(0,0,0,0.08);--color-border-default:rgba(0,0,0,0.14);--color-border-strong:rgba(0,0,0,0.25);--color-success-bg:rgba(45,140,122,0.12);--color-success-fg:var(--_teal-dark);--color-success-bd:var(--_teal);--color-warning-bg:rgba(0,0,0,0.08);--color-warning-fg:var(--_y900);--color-warning-bd:var(--_y900);--color-danger-bg:rgba(232,96,96,0.12);--color-danger-fg:#C0392B;--color-danger-bd:var(--_coral);--shadow-sm:0 1px 3px rgba(0,0,0,0.12);--shadow-md:0 4px 12px rgba(0,0,0,0.14);}
+/* Daily activity heatmap (Merchandising Plan) */
+.hm-legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 14px;font-family:var(--font-body);font-size:11px;color:var(--color-text-secondary)}
+.hm-legend-chip{display:inline-flex;align-items:center;gap:6px}
+.hm-swatch{display:inline-block;width:14px;height:14px;border-radius:2px;border:1px solid var(--color-border-default)}
+.hm-swatch.hm-0{background:var(--_n950)}
+.hm-swatch.hm-1{background:var(--_n900)}
+.hm-swatch.hm-2{background:var(--_n700)}
+.hm-swatch.hm-3{background:var(--_n500)}
+.hm-swatch.hm-4{background:var(--_y400)}
+.hm-scroll{overflow-x:auto;border:1px solid var(--color-border-subtle);border-radius:var(--r-md)}
+.hm-table{border-collapse:separate;border-spacing:1px;background:var(--color-border-subtle);width:auto;min-width:100%}
+.hm-table th, .hm-table td{padding:0;font-family:var(--font-body)}
+.hm-table thead th{background:var(--color-surface-elevated);font-size:10px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;padding:6px 4px;text-align:center;white-space:nowrap;position:sticky;top:0;z-index:1}
+.hm-table th.hm-date{min-width:42px;font-size:10px}
+.hm-table th.hm-rep, .hm-table td.hm-rep{position:sticky;left:0;z-index:2;background:var(--color-surface-elevated);min-width:130px;text-align:left;padding:8px 12px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--color-text-primary);border-right:1px solid var(--color-border-default)}
+.hm-table thead th.hm-rep{z-index:3}
+.hm-rep-name{font-family:var(--font-body);font-size:10px;font-weight:400;color:var(--color-text-secondary);text-transform:none;letter-spacing:0}
+.hm-cell{min-width:36px;height:32px;text-align:center;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--_n100)}
+.hm-cell.hm-0{background:var(--_n950);color:transparent}
+.hm-cell.hm-1{background:var(--_n900);color:var(--_n100)}
+.hm-cell.hm-2{background:var(--_n700);color:#fff}
+.hm-cell.hm-3{background:var(--_n500);color:#fff}
+.hm-cell.hm-4{background:var(--_y400);color:var(--_g950);font-weight:800}
 .theme-navy{color-scheme:dark;--color-surface-page:var(--_n950);--color-surface-base:var(--_n900);--color-surface-elevated:var(--_n700);--color-surface-sunken:var(--_n950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g0);--color-text-secondary:var(--_n100);--color-text-tertiary:var(--_n300);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(107,158,208,0.12);--color-border-default:rgba(107,158,208,0.20);--color-border-strong:rgba(107,158,208,0.35);--color-success-bg:rgba(45,140,122,0.15);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.35);--color-warning-bg:rgba(245,196,0,0.12);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.30);--color-danger-bg:rgba(232,96,96,0.14);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.35);--shadow-sm:0 1px 3px rgba(0,0,0,0.50);--shadow-md:0 4px 12px rgba(0,0,0,0.50);}
 </style>
 </head>
@@ -38,7 +61,7 @@
         <div>
           <div style="font-family:var(--font-display);font-weight:900;font-size:32px;text-transform:uppercase;">PULSE Leaderboard</div>
           <div style="color:var(--color-text-secondary);font-size:14px;">Olympic Paints sales team &middot; live performance</div>
-          <div style="color:var(--color-text-tertiary);font-size:12px;margin-top:2px;">Last updated 2026-05-09T15:50:36</div>
+          <div style="color:var(--color-text-tertiary);font-size:12px;margin-top:2px;">Last updated 2026-05-10T21:59:55</div>
         </div>
       </header>
       
@@ -87,33 +110,33 @@
         <tr style="background:rgba(45,140,122,0.18);">
           <td style="padding:12px;border-left:4px solid #2D8C7A;font-family:var(--font-display);font-weight:900;font-size:24px;color:#7AC97A;">#1</td>
           <td style="padding:12px;"><strong>Amit Patel</strong> <span style="color:var(--color-text-tertiary);">(AP)</span></td>
-          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 295 043</td>
+          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 294 858</td>
           <td style="padding:12px;text-align:right;font-weight:700;">37%</td>
-          <td style="padding:12px;text-align:right;">0%</td>
+          <td style="padding:12px;text-align:right;">100%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr>
         <tr style="background:rgba(45,140,122,0.18);">
           <td style="padding:12px;border-left:4px solid #2D8C7A;font-family:var(--font-display);font-weight:900;font-size:24px;color:#7AC97A;">#2</td>
           <td style="padding:12px;"><strong>Nikhil Panchal</strong> <span style="color:var(--color-text-tertiary);">(NP)</span></td>
-          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 1 194 977</td>
-          <td style="padding:12px;text-align:right;font-weight:700;">22%</td>
-          <td style="padding:12px;text-align:right;">0%</td>
+          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 1 309 926</td>
+          <td style="padding:12px;text-align:right;font-weight:700;">24%</td>
+          <td style="padding:12px;text-align:right;">100%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr>
         <tr style="background:transparent;">
           <td style="padding:12px;border-left:4px solid transparent;font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--color-text-primary);">#3</td>
           <td style="padding:12px;"><strong>Bhadresh Vallabh</strong> <span style="color:var(--color-text-tertiary);">(BV)</span></td>
-          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 809 047</td>
-          <td style="padding:12px;text-align:right;font-weight:700;">14%</td>
-          <td style="padding:12px;text-align:right;">0%</td>
+          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 1 101 392</td>
+          <td style="padding:12px;text-align:right;font-weight:700;">19%</td>
+          <td style="padding:12px;text-align:right;">100%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr>
         <tr style="background:rgba(232,96,96,0.18);">
           <td style="padding:12px;border-left:4px solid #E86060;font-family:var(--font-display);font-weight:900;font-size:24px;color:#FF8585;">#4</td>
           <td style="padding:12px;"><strong>Aboo Cassim</strong> <span style="color:var(--color-text-tertiary);">(AC)</span></td>
-          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 195 466</td>
-          <td style="padding:12px;text-align:right;font-weight:700;">11%</td>
-          <td style="padding:12px;text-align:right;">0%</td>
+          <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 213 249</td>
+          <td style="padding:12px;text-align:right;font-weight:700;">12%</td>
+          <td style="padding:12px;text-align:right;">92%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr>
         <tr style="background:rgba(232,96,96,0.18);">
@@ -121,7 +144,7 @@
           <td style="padding:12px;"><strong>Byron Minnie</strong> <span style="color:var(--color-text-tertiary);">(BM)</span></td>
           <td style="padding:12px;text-align:right;font-family:var(--font-display);font-weight:700;">R 0</td>
           <td style="padding:12px;text-align:right;font-weight:700;">0%</td>
-          <td style="padding:12px;text-align:right;">0%</td>
+          <td style="padding:12px;text-align:right;">100%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr></tbody>
       </table>
