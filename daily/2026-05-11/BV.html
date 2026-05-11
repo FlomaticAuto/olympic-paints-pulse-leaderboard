@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-navy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULSE Daily — BV — Olympic Paints</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>var t=localStorage.getItem('oly-theme');if(t)document.documentElement.className=t;</script>
+<style>
+:root {
+  --_y50:#FEF9E0; --_y100:#FDF0A0; --_y200:#FAE04D;
+  --_y400:#F5C400; --_y600:#D4A800; --_y800:#A88000; --_y900:#6A5000;
+  --_n50:#E8EFF8; --_n100:#B8CCE8; --_n300:#6B9ED0;
+  --_n500:#2D6BA8; --_n700:#1A3D6E; --_n900:#0D2040; --_n950:#071022;
+  --_g0:#FFFFFF; --_g50:#F7F6F3; --_g100:#E8E7E2; --_g200:#C8C7C0;
+  --_g400:#949390; --_g600:#5C5B58; --_g800:#2E2E2C;
+  --_g900:#1A1A18; --_g950:#0D0D0B;
+  --_teal:#2D8C7A; --_teal-light:#C8EDE7; --_teal-dark:#1a5c50;
+  --_terra:#C97A3A; --_coral:#E86060; --_coral-light:#FDDCDC;
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'Barlow',sans-serif;
+  --r-sm:4px; --r-md:8px; --r-lg:12px; --r-xl:16px; --r-pill:50px;
+}
+.theme-light{color-scheme:light;--color-surface-page:var(--_g50);--color-surface-base:var(--_g0);--color-surface-elevated:var(--_g0);--color-surface-sunken:var(--_g100);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g950);--color-text-secondary:var(--_g600);--color-text-tertiary:var(--_g400);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y600);--color-border-subtle:var(--_g100);--color-border-default:var(--_g200);--color-border-strong:var(--_g400);--color-success-bg:#EDF7F5;--color-success-fg:var(--_teal-dark);--color-success-bd:var(--_teal);--color-warning-bg:var(--_y50);--color-warning-fg:var(--_y900);--color-warning-bd:var(--_y600);--color-danger-bg:#FEF2F2;--color-danger-fg:#C0392B;--color-danger-bd:var(--_coral);--shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow-md:0 4px 12px rgba(0,0,0,0.08);}
+.theme-dark{color-scheme:dark;--color-surface-page:var(--_g950);--color-surface-base:var(--_g900);--color-surface-elevated:var(--_g800);--color-surface-sunken:var(--_g950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g100);--color-text-secondary:var(--_g400);--color-text-tertiary:var(--_g600);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(255,255,255,0.06);--color-border-default:rgba(255,255,255,0.10);--color-border-strong:rgba(255,255,255,0.20);--color-success-bg:rgba(45,140,122,0.12);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.30);--color-warning-bg:rgba(245,196,0,0.10);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.25);--color-danger-bg:rgba(232,96,96,0.12);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.30);--shadow-sm:0 1px 3px rgba(0,0,0,0.40);--shadow-md:0 4px 12px rgba(0,0,0,0.40);}
+.theme-brand{color-scheme:light;--color-surface-page:var(--_y400);--color-surface-base:var(--_y200);--color-surface-elevated:var(--_y50);--color-surface-sunken:var(--_y600);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_g950);--color-text-primary:var(--_g950);--color-text-secondary:var(--_y900);--color-text-tertiary:var(--_y800);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_g950);--color-brand-hover:var(--_n700);--color-border-subtle:rgba(0,0,0,0.08);--color-border-default:rgba(0,0,0,0.14);--color-border-strong:rgba(0,0,0,0.25);--color-success-bg:rgba(45,140,122,0.12);--color-success-fg:var(--_teal-dark);--color-success-bd:var(--_teal);--color-warning-bg:rgba(0,0,0,0.08);--color-warning-fg:var(--_y900);--color-warning-bd:var(--_y900);--color-danger-bg:rgba(232,96,96,0.12);--color-danger-fg:#C0392B;--color-danger-bd:var(--_coral);--shadow-sm:0 1px 3px rgba(0,0,0,0.12);--shadow-md:0 4px 12px rgba(0,0,0,0.14);}
+/* Daily activity heatmap (Merchandising Plan) */
+.hm-legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 14px;font-family:var(--font-body);font-size:11px;color:var(--color-text-secondary)}
+.hm-legend-chip{display:inline-flex;align-items:center;gap:6px}
+.hm-swatch{display:inline-block;width:14px;height:14px;border-radius:2px;border:1px solid var(--color-border-default)}
+.hm-swatch.hm-0{background:var(--_n950)}
+.hm-swatch.hm-1{background:var(--_n900)}
+.hm-swatch.hm-2{background:var(--_n700)}
+.hm-swatch.hm-3{background:var(--_n500)}
+.hm-swatch.hm-4{background:var(--_y400)}
+.hm-scroll{overflow-x:auto;border:1px solid var(--color-border-subtle);border-radius:var(--r-md)}
+.hm-table{border-collapse:separate;border-spacing:1px;background:var(--color-border-subtle);width:auto;min-width:100%}
+.hm-table th, .hm-table td{padding:0;font-family:var(--font-body)}
+.hm-table thead th{background:var(--color-surface-elevated);font-size:10px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;padding:6px 4px;text-align:center;white-space:nowrap;position:sticky;top:0;z-index:1}
+.hm-table th.hm-date{min-width:42px;font-size:10px}
+.hm-table th.hm-rep, .hm-table td.hm-rep{position:sticky;left:0;z-index:2;background:var(--color-surface-elevated);min-width:130px;text-align:left;padding:8px 12px;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--color-text-primary);border-right:1px solid var(--color-border-default)}
+.hm-table thead th.hm-rep{z-index:3}
+.hm-rep-name{font-family:var(--font-body);font-size:10px;font-weight:400;color:var(--color-text-secondary);text-transform:none;letter-spacing:0}
+.hm-cell{min-width:36px;height:32px;text-align:center;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--_n100)}
+.hm-cell.hm-0{background:var(--_n950);color:transparent}
+.hm-cell.hm-1{background:var(--_n900);color:var(--_n100)}
+.hm-cell.hm-2{background:var(--_n700);color:#fff}
+.hm-cell.hm-3{background:var(--_n500);color:#fff}
+.hm-cell.hm-4{background:var(--_y400);color:var(--_g950);font-weight:800}
+.theme-navy{color-scheme:dark;--color-surface-page:var(--_n950);--color-surface-base:var(--_n900);--color-surface-elevated:var(--_n700);--color-surface-sunken:var(--_n950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g0);--color-text-secondary:var(--_n100);--color-text-tertiary:var(--_n300);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(107,158,208,0.12);--color-border-default:rgba(107,158,208,0.20);--color-border-strong:rgba(107,158,208,0.35);--color-success-bg:rgba(45,140,122,0.15);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.35);--color-warning-bg:rgba(245,196,0,0.12);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.30);--color-danger-bg:rgba(232,96,96,0.14);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.35);--shadow-sm:0 1px 3px rgba(0,0,0,0.50);--shadow-md:0 4px 12px rgba(0,0,0,0.50);}
+</style>
+</head>
+<body style="background:var(--color-surface-page);color:var(--color-text-primary);font-family:var(--font-body);margin:0;">
+<div class="theme-bar" style="display:flex;gap:4px;padding:8px 16px;background:var(--color-surface-secondary);"><button onclick="olyTheme('theme-light',this)">Light</button><button onclick="olyTheme('theme-dark',this)">Dark</button><button onclick="olyTheme('theme-brand',this)">Brand</button><button onclick="olyTheme('theme-navy',this)" class="active">Navy</button></div>
+
+    <div style="max-width:680px;margin:0 auto;padding:16px;">
+      <header style="display:flex;align-items:center;gap:12px;padding:12px 0;">
+        <div style="width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="https://flomaticauto.github.io/olympic-paints-clocking/logo.jpg" alt="Olympic Paints" width="36" height="36" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:0.02em;">PULSE Daily — BV</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);">Mon 11 May 2026 · Cycle BV1 · Day 1/5</div>
+        </div>
+      </header>
+
+      <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:16px;margin:12px 0;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);">You Are</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;">
+          <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">R 1 101 392</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">MTD Sales · 19%</div></div>
+          <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">#3/5</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">Team rank</div></div>
+          <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">0%</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">Plan adherence</div></div>
+        </div>
+      </section>
+
+      <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);overflow:hidden;margin:12px 0;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);padding:14px 14px 8px;">This Week&rsquo;s Plan</div>
+        
+          <div style="background:rgba(245,196,0,0.07);border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="var e=document.getElementById('bday0');var a=document.getElementById('bday0-a');var open=e.style.display==='block';e.style.display=open?'none':'block';a.style.transform=open?'':'rotate(180deg)';"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+              <div>
+                <span style="font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-brand-primary);">Day 1 &mdash; Mon 11 May</span>
+                <span style="font-size:11px;color:var(--color-text-tertiary);margin-left:8px;">5 stores</span>
+                &nbsp;<span style="font-size:10px;font-weight:700;color:var(--color-brand-primary);padding:1px 5px;background:rgba(245,196,0,0.12);border-radius:4px;">TODAY</span>
+              </div>
+              <span id="bday0-a" style="font-size:11px;color:var(--color-text-tertiary);transform:rotate(180deg);">&#9660;</span>
+            </div>
+            <div id="bday0" style="display:block;">
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd0').style.display=document.getElementById('bsd0').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd0').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">A K Distributors (Pty) Ltd</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA055</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Industrial Site</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 29 190</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd0" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">29 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 570</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5KG PUTTY</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 414 140</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 29 190</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 29 190</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd1').style.display=document.getElementById('bsd1').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd1').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Bethani Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KB022</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Bethanie</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 12 944</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd1" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">15 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 2 933</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L Q D CHARCOAL</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 52 185</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 12 944</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 12 944</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd2').style.display=document.getElementById('bsd2').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd2').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">East End General Dealer</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KE024</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>East End</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd2" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">19 Feb 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 47</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">1L RAINPROOF RED</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 109 443</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd3').style.display=document.getElementById('bsd3').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd3').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Mica Lichtenburg</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KJ021</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Dr Nelson Mandela Drive</span>
+                
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd3" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">—</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 0</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">—</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 0</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd4').style.display=document.getElementById('bsd4').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd4').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">S.E.Z. Superette</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KS004</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Mafikeng</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">Cooling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 120 563</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd4" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">29 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 5 200</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">20L UNIV ROOF  GREEN</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 2 003 117</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 120 563</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 120 563</div></div>
+              </div>
+            </div>
+          </div></div>
+          </div>
+          <div style="background:var(--color-surface-sunken);border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="var e=document.getElementById('bday1');var a=document.getElementById('bday1-a');var open=e.style.display==='block';e.style.display=open?'none':'block';a.style.transform=open?'':'rotate(180deg)';"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+              <div>
+                <span style="font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-tertiary);">Day 2 &mdash; Tue 12 May</span>
+                <span style="font-size:11px;color:var(--color-text-tertiary);margin-left:8px;">5 stores</span>
+                
+              </div>
+              <span id="bday1-a" style="font-size:11px;color:var(--color-text-tertiary);transform:;">&#9660;</span>
+            </div>
+            <div id="bday1" style="display:none;">
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd5').style.display=document.getElementById('bsd5').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd5').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">AD Fancy Goods TA</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA101</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>4075 Newton Street</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 6 262</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd5" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">29 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 1 495</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">DOZEN 750ML LACQUER THINNERS</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 95 785</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 6 262</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 6 262</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd6').style.display=document.getElementById('bsd6').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd6').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Border Plumbing & Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KB044</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Thlabane</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd6" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">27 Nov 2024</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 388</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">20L HI HIDING CONT PVA WHITE</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 0</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd7').style.display=document.getElementById('bsd7').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd7').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">F.Bham & Co</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KB007</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Main Northam Road - Moruleng</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 3 053</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd7" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">12 Mar 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 2 655</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">20L DECOR NIGHT SKY PVA</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 41 708</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 3 053</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 3 053</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd8').style.display=document.getElementById('bsd8').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd8').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">NSR Hardware C.C.</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA022</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Brits</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd8" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">19 Jun 2024</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 694</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L ALKYD ROOF/STOEP BLACK</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 0</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd9').style.display=document.getElementById('bsd9').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd9').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Scenic Route Trading 580 cc</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KS046</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Moruleng Mall Road</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd9" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">06 Sep 2024</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 365</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">Doz x 100ML STAINERS VIOLET</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 0</div>
+              
+            </div>
+          </div></div>
+          </div>
+          <div style="background:var(--color-surface-sunken);border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="var e=document.getElementById('bday2');var a=document.getElementById('bday2-a');var open=e.style.display==='block';e.style.display=open?'none':'block';a.style.transform=open?'':'rotate(180deg)';"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+              <div>
+                <span style="font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-tertiary);">Day 3 &mdash; Wed 13 May</span>
+                <span style="font-size:11px;color:var(--color-text-tertiary);margin-left:8px;">5 stores</span>
+                
+              </div>
+              <span id="bday2-a" style="font-size:11px;color:var(--color-text-tertiary);transform:;">&#9660;</span>
+            </div>
+            <div id="bday2" style="display:none;">
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd10').style.display=document.getElementById('bsd10').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd10').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Angamia Building Material</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA002</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Indian Complex</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd10" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">09 Mar 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 570</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L HIGH GLOSS (MQ) WHITE</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 53 334</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd11').style.display=document.getElementById('bsd11').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd11').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Brits Hardware & Glass</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KB011</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Brits</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R -21 892</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd11" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">28 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 2 478</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L Q D BRONZE ENAMEL</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 13 848 673</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R -22 900</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 007</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R -21 892</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd12').style.display=document.getElementById('bsd12').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd12').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Hardware Centre</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KH004</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Rustenburg</span>
+                
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd12" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">—</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 0</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">—</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 0</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd13').style.display=document.getElementById('bsd13').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd13').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Northam Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KN010</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Northam</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R -137</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd13" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">12 Jan 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 4 200</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">20L HI HIDING CONT PVA WHITE</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 43 413</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R -137</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R -137</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd14').style.display=document.getElementById('bsd14').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd14').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Skeerpoort Handelhuis</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KS005</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Dist. Brits</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd14" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">19 Nov 2025</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 1 977</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L HIGH GLOSS (MQ) GREY</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 29 314</div>
+              
+            </div>
+          </div></div>
+          </div>
+          <div style="background:var(--color-surface-sunken);border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="var e=document.getElementById('bday3');var a=document.getElementById('bday3-a');var open=e.style.display==='block';e.style.display=open?'none':'block';a.style.transform=open?'':'rotate(180deg)';"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+              <div>
+                <span style="font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-tertiary);">Day 4 &mdash; Thu 14 May</span>
+                <span style="font-size:11px;color:var(--color-text-tertiary);margin-left:8px;">5 stores</span>
+                
+              </div>
+              <span id="bday3-a" style="font-size:11px;color:var(--color-text-tertiary);transform:;">&#9660;</span>
+            </div>
+            <div id="bday3" style="display:none;">
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd15').style.display=document.getElementById('bsd15').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd15').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Ash Building Supplies</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA031</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>SETLAGOLE</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 51 913</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd15" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">17 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 4 350</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L Q D BLACK ENAMEL</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 292 180</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 51 913</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 51 913</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd16').style.display=document.getElementById('bsd16').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd16').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Dainty's Wholesale Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KD001</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Mafeking</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.18);color:#E86060;">R 480 614</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd16" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">29 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 0</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">200mm x 10m Membrane</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 4 461 171</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 265 010</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_coral);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--_coral);">R 215 604</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_coral);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_coral);">R 480 614</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd17').style.display=document.getElementById('bsd17').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd17').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Henque 3481 Builders Mecca</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KH013</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Opposite Toyota Garage</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">Cooling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 23 402</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd17" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">17 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 1 442</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">1L Q D BLACK ENAMEL</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 302 264</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 23 402</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 23 402</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd18').style.display=document.getElementById('bsd18').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd18').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Platinum Rainbow Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KP030</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Area Mogwase</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Stable</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 60 310</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd18" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">21 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 0</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">200mm x 10m Membrane</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 519 212</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 60 310</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 60 310</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd19').style.display=document.getElementById('bsd19').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd19').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Total Hardware & Tiles</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KT061</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Rustenburg</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd19" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">11 Nov 2025</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 1 493</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5LT Q.D.ENAMEL MATT BLACK</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 110 360</div>
+              
+            </div>
+          </div></div>
+          </div>
+          <div style="background:var(--color-surface-sunken);border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="var e=document.getElementById('bday4');var a=document.getElementById('bday4-a');var open=e.style.display==='block';e.style.display=open?'none':'block';a.style.transform=open?'':'rotate(180deg)';"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+              <div>
+                <span style="font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-tertiary);">Day 5 &mdash; Fri 15 May</span>
+                <span style="font-size:11px;color:var(--color-text-tertiary);margin-left:8px;">5 stores</span>
+                
+              </div>
+              <span id="bday4-a" style="font-size:11px;color:var(--color-text-tertiary);transform:;">&#9660;</span>
+            </div>
+            <div id="bday4" style="display:none;">
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd20').style.display=document.getElementById('bsd20').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd20').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Ayob's Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KA014</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Industria  Area Mafikeng</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.18);color:#F5C400;">Rocket</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.18);color:#E86060;">R 142 654</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd20" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">29 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 2 846</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L ROAD MARKING YELLOW</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 515 897</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 129 373</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_coral);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--_coral);">R 13 281</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_coral);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_coral);">R 142 654</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd21').style.display=document.getElementById('bsd21').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd21').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Dhaval Patel Ent</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KD002</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Opp Baktgatla Head Office</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Dead / Dormant</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd21" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">10 Dec 2025</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 2 365</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L Q.D. BURGUNDY</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 197 984</div>
+              
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd22').style.display=document.getElementById('bsd22').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd22').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Henque 3481 CC</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KH013</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Shop No 27</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">Cooling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 23 402</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd22" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">17 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 1 442</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">1L Q D BLACK ENAMEL</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 302 264</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 23 402</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 23 402</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd23').style.display=document.getElementById('bsd23').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd23').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Platinum Rainbow Hardware</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KP030</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Zeerust</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Stable</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 60 310</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd23" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">21 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 0</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">200mm x 10m Membrane</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 519 212</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 60 310</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 60 310</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom:1px solid var(--color-border-subtle);">
+            <div onclick="document.getElementById('bsd24').style.display=document.getElementById('bsd24').style.display==='block'?'none':'block';this.querySelector('.sarrow').style.transform=document.getElementById('bsd24').style.display==='block'?'rotate(180deg)':''"
+                 style="display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;">
+              <div>
+                <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Wolhuterskop Trading</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KW003</span>
+                &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Wolhuterskop</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 7 576</span>
+              </div>
+              <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
+            </div>
+            <div id="bsd24" style="display:none;padding:12px 14px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle);">
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Last Purchase</div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;">
+                <span style="font-size:13px;font-weight:700;">07 Apr 2026</span>
+                <span style="font-size:13px;color:var(--color-text-secondary);">R 6 588</span>
+                <span style="font-size:12px;color:var(--color-text-tertiary);">5L HIGH GLOSS (MQ) BURGANDY</span>
+              </div>
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">12-Month Revenue</div>
+              <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 127 842</div>
+              
+              <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 7 576</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 7 576</div></div>
+              </div>
+            </div>
+          </div></div>
+          </div>
+      </section>
+
+      <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:16px;margin:12px 0;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);">Yesterday — 0/0 visits logged</div>
+        <ul style="list-style:none;padding:0;margin:8px 0 0 0;"><li style="color:var(--color-text-tertiary);">No plan recorded</li></ul>
+        <div style="margin-top:8px;font-size:13px;color:var(--color-text-secondary);">Sales: R 0 · Leads: 0</div>
+      </section>
+
+      
+      <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:16px;margin:12px 0;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);margin-bottom:8px;">Your Debtor Book</div>
+        <div style="display:flex;gap:4px;margin-bottom:8px;"><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 1 185 615</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">Current</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 3 365 157</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">30 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-warning-fg);">R 581 113</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">60 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-danger-fg);">R 363 112</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">90 days</div></div></div><div style="font-size:11px;color:var(--color-text-tertiary);text-align:right;padding:0 4px 8px;">Total outstanding: <strong style="color:var(--color-text-primary);">R 5 518 053</strong></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+        <div style="position:relative;height:120px;margin-top:8px;">
+          <canvas id="debtors_chart_BV"></canvas>
+        </div>
+        <div style="font-size:10px;color:var(--color-text-tertiary);margin-top:4px;">
+          Trend — 7 days · your total outstanding balance
+        </div>
+        <script>
+        (function(){
+          var ctx = document.getElementById('debtors_chart_BV').getContext('2d');
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ["2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11"],
+              datasets: [{
+                data: [5077488, 5077488, 5077777, 5276589, 5517345, 5517345, 5517345],
+                borderColor: '#F5C400',
+                backgroundColor: 'rgba(245,196,0,0.08)',
+                borderWidth: 2,
+                pointRadius: 3,
+                pointBackgroundColor: '#F5C400',
+                fill: true,
+                tension: 0.3,
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: { legend: { display: false } },
+              scales: {
+                x: { display: false },
+                y: {
+                  display: true,
+                  ticks: {
+                    color: '#6B9ED0',
+                    font: { size: 10 },
+                    callback: function(v) { return 'R ' + (v/1000).toFixed(0) + 'k'; }
+                  },
+                  grid: { color: 'rgba(107,158,208,0.12)' }
+                }
+              }
+            }
+          });
+        })();
+        </script>
+      </section>
+
+      <a href="https://www.jotform.com/261282305303042?rep=BV&date=2026-05-11" style="display:block;background:var(--color-brand-primary);color:var(--color-text-on-brand);text-align:center;padding:18px;border-radius:var(--r-lg);font-family:var(--font-display);font-weight:900;text-transform:uppercase;text-decoration:none;letter-spacing:0.06em;margin:16px 0;">Acknowledge by 17:00 → Submit today's plan</a>
+
+      <footer style="text-align:center;font-size:11px;color:var(--color-text-tertiary);padding:16px 0;">
+        <a href="https://flomaticauto.github.io/olympic-paints-pulse-leaderboard/" style="color:var(--color-brand-primary);text-decoration:none;">See live leaderboard →</a><br>
+        Olympic Paints PULSE · Reply to this email with questions.
+      </footer>
+    </div>
+    
+<script>
+const OLY_THEMES=['theme-light','theme-dark','theme-brand','theme-navy'];
+function olyTheme(t,btn){
+  document.documentElement.classList.remove(...OLY_THEMES);
+  document.documentElement.classList.add(t);
+  localStorage.setItem('oly-theme',t);
+  document.querySelectorAll('.theme-bar button').forEach(b=>b.classList.toggle('active',b===btn));
+}
+</script>
+</body>
+</html>
