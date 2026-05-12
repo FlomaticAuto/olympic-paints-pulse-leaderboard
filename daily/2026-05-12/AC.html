@@ -51,6 +51,39 @@
 .hm-cell.hm-4{background:var(--_y400);color:var(--_g950);font-weight:800}
 .theme-navy{color-scheme:dark;--color-surface-page:var(--_n950);--color-surface-base:var(--_n900);--color-surface-elevated:var(--_n700);--color-surface-sunken:var(--_n950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g0);--color-text-secondary:var(--_n100);--color-text-tertiary:var(--_n300);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(107,158,208,0.12);--color-border-default:rgba(107,158,208,0.20);--color-border-strong:rgba(107,158,208,0.35);--color-success-bg:rgba(45,140,122,0.15);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.35);--color-warning-bg:rgba(245,196,0,0.12);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.30);--color-danger-bg:rgba(232,96,96,0.14);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.35);--shadow-sm:0 1px 3px rgba(0,0,0,0.50);--shadow-md:0 4px 12px rgba(0,0,0,0.50);}
 </style>
+<style>
+/* Mobile-first responsive helpers for PULSE browser pages */
+.pulse-page{max-width:900px;margin:0 auto;padding:24px;}
+.pulse-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.pulse-table{width:100%;border-collapse:collapse;}
+.theme-bar button{min-height:36px;padding:6px 12px;border:0;background:transparent;color:var(--color-text-on-navy,#fff);font-family:var(--font-body);font-size:13px;border-radius:6px;cursor:pointer;}
+.theme-bar button.active{background:var(--color-brand-primary);color:var(--color-text-on-brand);font-weight:700;}
+
+/* Tablet & phone ≤ 768px */
+@media (max-width:768px){
+  .pulse-page{padding:16px 12px;}
+  .pulse-hero-title{font-size:24px!important;}
+  .pulse-hero-sub{font-size:13px!important;}
+  .pulse-explainer{padding:14px 16px!important;}
+  .pulse-explainer p{font-size:13px!important;}
+}
+
+/* Phone ≤ 600px */
+@media (max-width:600px){
+  .pulse-page{padding:12px 8px;}
+  .theme-bar{padding:6px 8px!important;flex-wrap:wrap;}
+  .theme-bar button{flex:1 1 auto;min-width:64px;font-size:12px;}
+  .pulse-hero{flex-wrap:wrap;gap:10px!important;}
+  .pulse-hero-title{font-size:20px!important;line-height:1.1;}
+  .pulse-hero-sub{font-size:12px!important;}
+  /* Wide tables scroll horizontally instead of overflowing the viewport */
+  .pulse-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-md);}
+  .pulse-table-wrap > table{min-width:560px;}
+  .pulse-table-wrap td, .pulse-table-wrap th{padding:10px 8px!important;font-size:13px;}
+  /* Make any anchor/button-styled link a comfortable tap target */
+  a.pulse-tap, button.pulse-tap{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+}
+</style>
 </head>
 <body style="background:var(--color-surface-page);color:var(--color-text-primary);font-family:var(--font-body);margin:0;">
 <div class="theme-bar" style="display:flex;gap:4px;padding:8px 16px;background:var(--color-surface-secondary);"><button onclick="olyTheme('theme-light',this)">Light</button><button onclick="olyTheme('theme-dark',this)">Dark</button><button onclick="olyTheme('theme-brand',this)">Brand</button><button onclick="olyTheme('theme-navy',this)" class="active">Navy</button></div>
@@ -66,7 +99,7 @@
 
       <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:16px;margin:12px 0;">
         <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);">You Are</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:8px;">
           <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">R 236 098</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">MTD Sales · 14%</div></div>
           <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">#4/5</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">Team rank</div></div>
           <div><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">33%</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);">Plan adherence</div></div>
@@ -117,7 +150,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Ebrahim Abramjee Traders CC</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KH021</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>NEXT TO APC CEMENT</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 445 530</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 459 100</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -132,12 +165,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 3 171 792</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 38 933</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 52 503</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 406 596</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 445 530</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 459 100</div></div>
               </div>
             </div>
           </div>
@@ -163,7 +196,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 400 200</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 143 141</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -194,7 +227,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 156 228</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R -90</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -225,7 +258,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 48 927</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 2 670</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 3 328</div></div>
@@ -241,7 +274,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">POWER BUILD</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>ROODEPOORT</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -256,12 +289,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -272,7 +305,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Power Build</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Protea Glen</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -287,12 +320,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -318,7 +351,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 73 824</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R -4 484</div></div>
@@ -349,7 +382,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 284 324</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 17</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -377,7 +410,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Active Build</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Carltonville</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -392,12 +425,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -408,7 +441,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Ebrahim Abramjee Traders CC</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KH021</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Opp Braamfontein Station</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 445 530</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.14);color:#6B9ED0;">Active but Narrow</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(107,158,208,0.15);color:#6B9ED0;">R 459 100</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -423,12 +456,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 3 171 792</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 38 933</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 52 503</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 406 596</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 445 530</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--color-text-secondary);">Total</div><div style="font-size:12px;font-weight:700;color:var(--color-text-secondary);">R 459 100</div></div>
               </div>
             </div>
           </div>
@@ -462,7 +495,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Maliks TA Power Build</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Chamdor</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -477,12 +510,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -531,7 +564,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 440 503</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -608,7 +641,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 53 537</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 9 080</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 14 860</div></div>
@@ -651,7 +684,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 410 328</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 21 191</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -705,7 +738,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 21 820</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 4 373</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -782,7 +815,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 458 036</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 127 787</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -798,7 +831,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">RANK HARDWARE</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>WESTONAREA</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -813,12 +846,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -844,7 +877,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 410 328</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 21 191</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -875,7 +908,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 2 436</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -918,7 +951,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 332 386</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 67 636</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -949,7 +982,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 16 655</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 2 214</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -965,7 +998,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">IMFA HARDWARE</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>RANDFONTEIN</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -980,12 +1013,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1011,7 +1044,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 542 680</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R -61</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1027,7 +1060,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">POWER BUILD</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>AZAADVILLE</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1042,12 +1075,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1073,7 +1106,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 458 036</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 127 787</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1089,7 +1122,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Randfontein Hardware</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Randfontein</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1104,12 +1137,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1135,7 +1168,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 17 133</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 1 210</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1166,7 +1199,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 536</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1232,7 +1265,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 99 434</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1248,7 +1281,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">IMFA HARDWARE</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>AUREUS</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1263,12 +1296,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1294,7 +1327,7 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 93 751</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 2 636</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 8 371</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">60d</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
@@ -1310,7 +1343,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">POWER BUILD</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>KAGISO MALL</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1325,12 +1358,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1341,7 +1374,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Power Build</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KM027</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Munsieville</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 101 391</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(232,96,96,0.16);color:#E86060;">Falling</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(45,140,122,0.16);color:#2D8C7A;">Active & Growing</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 1 125 739</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1356,12 +1389,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 6 217 159</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 196 354</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 220 702</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 790 168</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 114 869</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 101 391</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 1 125 739</div></div>
               </div>
             </div>
           </div>
@@ -1372,7 +1405,7 @@
                 <span style="font-size:14px;font-weight:700;color:var(--color-text-primary);">Sams Hardware</span>
                 <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:6px;">KS038</span>
                 &nbsp;&middot;&nbsp;<span style='font-size:12px;color:var(--color-text-secondary);'>Kliptown</span>
-                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 14 672</span>
+                <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(201,122,58,0.16);color:#C97A3A;">At-Risk</span><span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:rgba(245,196,0,0.15);color:#F5C400;">R 9 672</span>
               </div>
               <span class="sarrow" style="font-size:11px;color:var(--color-text-tertiary);">&#9660;</span>
             </div>
@@ -1387,12 +1420,12 @@
               <div style="font-size:18px;font-weight:700;color:var(--color-brand-primary);margin-bottom:10px;">R 60 902</div>
               
               <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin:10px 0 6px;">Outstanding Balance</div>
-              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-radius:6px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:2px;border-radius:6px;overflow:hidden;">
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">Current</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">30d</div><div style="font-size:12px;font-weight:700;">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 14 672</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--_y400);">60d</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 9 672</div></div>
                 <div style="padding:8px 6px;background:var(--color-surface-base);text-align:center;"><div style="font-size:10px;color:var(--color-text-tertiary);">90d+</div><div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);">R 0</div></div>
-                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 14 672</div></div>
+                <div style="padding:8px 6px;background:var(--color-surface-sunken);text-align:center;"><div style="font-size:10px;color:var(--_y400);">Total</div><div style="font-size:12px;font-weight:700;color:var(--_y400);">R 9 672</div></div>
               </div>
             </div>
           </div>
@@ -1454,7 +1487,7 @@
       
       <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:16px;margin:12px 0;">
         <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);margin-bottom:8px;">Your Debtor Book</div>
-        <div style="display:flex;gap:4px;margin-bottom:8px;"><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 369 192</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">Current</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 1 901 937</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">30 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-warning-fg);">R 231 106</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">60 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-danger-fg);">R 26 277</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">90 days</div></div></div><div style="font-size:11px;color:var(--color-text-tertiary);text-align:right;padding:0 4px 8px;">Total outstanding: <strong style="color:var(--color-text-primary);">R 3 024 968</strong></div>
+        <div style="display:flex;gap:4px;margin-bottom:8px;"><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 410 417</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">Current</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;">R 1 901 937</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">30 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-warning-fg);">R 225 451</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">60 days</div></div><div style="flex:1;text-align:center;padding:12px 8px;"><div style="font-family:var(--font-display);font-weight:900;font-size:20px;white-space:nowrap;color:var(--color-danger-fg);">R 1 931</div><div style="font-size:10px;text-transform:uppercase;color:var(--color-text-tertiary);letter-spacing:0.08em;margin-top:4px;">90 days</div></div></div><div style="font-size:11px;color:var(--color-text-tertiary);text-align:right;padding:0 4px 8px;">Total outstanding: <strong style="color:var(--color-text-primary);">R 3 036 194</strong></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
         <div style="position:relative;height:120px;margin-top:8px;">
           <canvas id="debtors_chart_AC"></canvas>
