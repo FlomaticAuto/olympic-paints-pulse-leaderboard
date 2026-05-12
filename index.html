@@ -51,21 +51,54 @@
 .hm-cell.hm-4{background:var(--_y400);color:var(--_g950);font-weight:800}
 .theme-navy{color-scheme:dark;--color-surface-page:var(--_n950);--color-surface-base:var(--_n900);--color-surface-elevated:var(--_n700);--color-surface-sunken:var(--_n950);--color-surface-brand:var(--_y400);--color-surface-secondary:var(--_n700);--color-text-primary:var(--_g0);--color-text-secondary:var(--_n100);--color-text-tertiary:var(--_n300);--color-text-on-brand:var(--_g950);--color-text-on-navy:var(--_g0);--color-brand-primary:var(--_y400);--color-brand-hover:var(--_y200);--color-border-subtle:rgba(107,158,208,0.12);--color-border-default:rgba(107,158,208,0.20);--color-border-strong:rgba(107,158,208,0.35);--color-success-bg:rgba(45,140,122,0.15);--color-success-fg:var(--_teal-light);--color-success-bd:rgba(45,140,122,0.35);--color-warning-bg:rgba(245,196,0,0.12);--color-warning-fg:var(--_y200);--color-warning-bd:rgba(245,196,0,0.30);--color-danger-bg:rgba(232,96,96,0.14);--color-danger-fg:var(--_coral-light);--color-danger-bd:rgba(232,96,96,0.35);--shadow-sm:0 1px 3px rgba(0,0,0,0.50);--shadow-md:0 4px 12px rgba(0,0,0,0.50);}
 </style>
+<style>
+/* Mobile-first responsive helpers for PULSE browser pages */
+.pulse-page{max-width:900px;margin:0 auto;padding:24px;}
+.pulse-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.pulse-table{width:100%;border-collapse:collapse;}
+.theme-bar button{min-height:36px;padding:6px 12px;border:0;background:transparent;color:var(--color-text-on-navy,#fff);font-family:var(--font-body);font-size:13px;border-radius:6px;cursor:pointer;}
+.theme-bar button.active{background:var(--color-brand-primary);color:var(--color-text-on-brand);font-weight:700;}
+
+/* Tablet & phone ≤ 768px */
+@media (max-width:768px){
+  .pulse-page{padding:16px 12px;}
+  .pulse-hero-title{font-size:24px!important;}
+  .pulse-hero-sub{font-size:13px!important;}
+  .pulse-explainer{padding:14px 16px!important;}
+  .pulse-explainer p{font-size:13px!important;}
+}
+
+/* Phone ≤ 600px */
+@media (max-width:600px){
+  .pulse-page{padding:12px 8px;}
+  .theme-bar{padding:6px 8px!important;flex-wrap:wrap;}
+  .theme-bar button{flex:1 1 auto;min-width:64px;font-size:12px;}
+  .pulse-hero{flex-wrap:wrap;gap:10px!important;}
+  .pulse-hero-title{font-size:20px!important;line-height:1.1;}
+  .pulse-hero-sub{font-size:12px!important;}
+  /* Wide tables scroll horizontally instead of overflowing the viewport */
+  .pulse-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-md);}
+  .pulse-table-wrap > table{min-width:560px;}
+  .pulse-table-wrap td, .pulse-table-wrap th{padding:10px 8px!important;font-size:13px;}
+  /* Make any anchor/button-styled link a comfortable tap target */
+  a.pulse-tap, button.pulse-tap{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+}
+</style>
 </head>
 <body style="background:var(--color-surface-page);color:var(--color-text-primary);font-family:var(--font-body);margin:0;">
 <div class="theme-bar" style="display:flex;gap:4px;padding:8px 16px;background:var(--color-surface-secondary);"><button onclick="olyTheme('theme-light',this)">Light</button><button onclick="olyTheme('theme-dark',this)">Dark</button><button onclick="olyTheme('theme-brand',this)">Brand</button><button onclick="olyTheme('theme-navy',this)" class="active">Navy</button></div>
 
-    <div style="max-width:900px;margin:0 auto;padding:24px;">
-      <header style="display:flex;align-items:center;gap:16px;padding:16px 0;">
+    <div class="pulse-page">
+      <header class="pulse-hero" style="display:flex;align-items:center;gap:16px;padding:16px 0;">
         <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="https://flomaticauto.github.io/olympic-paints-clocking/logo.jpg" alt="Olympic Paints" width="48" height="48" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
         <div>
-          <div style="font-family:var(--font-display);font-weight:900;font-size:32px;text-transform:uppercase;">PULSE Leaderboard</div>
-          <div style="color:var(--color-text-secondary);font-size:14px;">Olympic Paints sales team &middot; live performance</div>
-          <div style="color:var(--color-text-tertiary);font-size:12px;margin-top:2px;">Last updated 2026-05-12T09:33:40</div>
+          <div class="pulse-hero-title" style="font-family:var(--font-display);font-weight:900;font-size:32px;text-transform:uppercase;">PULSE Leaderboard</div>
+          <div class="pulse-hero-sub" style="color:var(--color-text-secondary);font-size:14px;">Olympic Paints sales team &middot; live performance</div>
+          <div class="pulse-hero-sub" style="color:var(--color-text-tertiary);font-size:12px;margin-top:2px;">Last updated 2026-05-12T23:28:49</div>
         </div>
       </header>
       
-    <section style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:20px 24px;margin:16px 0 24px;border-left:4px solid var(--color-brand-primary);">
+    <section class="pulse-explainer" style="background:var(--color-surface-elevated);border-radius:var(--r-lg);padding:20px 24px;margin:16px 0 24px;border-left:4px solid var(--color-brand-primary);">
       <div style="font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);margin-bottom:8px;">How to read this</div>
       <p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--color-text-secondary);">
         Live performance board for the Olympic Paints sales team. Refreshed automatically each weekday at 06:30.
@@ -96,17 +129,18 @@
       </table>
     </section>
     
-      <table style="width:100%;border-collapse:collapse;background:var(--color-surface-elevated);border-radius:var(--r-lg);overflow:hidden;">
-        <thead>
-          <tr style="background:var(--color-surface-sunken);text-align:left;font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);">
-            <th style="padding:12px;">Rank</th><th style="padding:12px;">Rep</th>
-            <th style="padding:12px;text-align:right;">MTD Sales</th>
-            <th style="padding:12px;text-align:right;">% Target</th>
-            <th style="padding:12px;text-align:right;">Plan Adh.</th>
-            <th style="padding:12px;text-align:right;">Ack Streak</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div class="pulse-table-wrap" style="background:var(--color-surface-elevated);border-radius:var(--r-lg);overflow:hidden;">
+        <table class="pulse-table" style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--color-surface-sunken);text-align:left;font-family:var(--font-display);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--color-text-tertiary);">
+              <th style="padding:12px;">Rank</th><th style="padding:12px;">Rep</th>
+              <th style="padding:12px;text-align:right;">MTD Sales</th>
+              <th style="padding:12px;text-align:right;">% Target</th>
+              <th style="padding:12px;text-align:right;">Plan Adh.</th>
+              <th style="padding:12px;text-align:right;">Ack Streak</th>
+            </tr>
+          </thead>
+          <tbody>
         <tr style="background:rgba(45,140,122,0.18);">
           <td style="padding:12px;border-left:4px solid #2D8C7A;font-family:var(--font-display);font-weight:900;font-size:24px;color:#7AC97A;">#1</td>
           <td style="padding:12px;"><strong>Amit Patel</strong> <span style="color:var(--color-text-tertiary);">(AP)</span></td>
@@ -147,7 +181,8 @@
           <td style="padding:12px;text-align:right;">100%</td>
           <td style="padding:12px;text-align:right;">0d</td>
         </tr></tbody>
-      </table>
+        </table>
+      </div>
       <footer style="text-align:center;color:var(--color-text-tertiary);font-size:11px;padding:24px 0 8px;">
         Olympic Paints PULSE &middot; Questions? Reply to your daily PULSE email or message Quintus on Telegram.
       </footer>
